@@ -55,37 +55,49 @@ export default function TextForm(props) {
           ></textarea>
         </div>
         <button
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1"
+          disabled={text.length === 0}
+          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1
+    ${text.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={handleUpClick}
         >
           Make Uppercase
         </button>
         <button
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1"
+          disabled={text.length === 0}
+          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1
+    ${text.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={handleLoClick}
         >
           Make Lowercase
         </button>
         <button
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1"
+          disabled={text.length === 0}
+          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1
+    ${text.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={handleCapClick}
         >
           Capitalize
         </button>
         <button
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1"
+          disabled={text.length === 0}
+          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1
+    ${text.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={handleCopyClick}
         >
           Copy Text
         </button>
         <button
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1"
+          disabled={text.length === 0}
+          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1
+    ${text.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={handleExtraSpeces}
         >
           Remove Extra Speces
         </button>
         <button
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1"
+          disabled={text.length === 0}
+          className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mx-1 my-1
+    ${text.length === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           onClick={handleClearClick}
         >
           Clear Text
@@ -96,7 +108,7 @@ export default function TextForm(props) {
         <h3 className="text-2xl font-semibold">Your Text Summary</h3>
         <p>
           {text.split(" ").filter((element) => element.length !== 0).length}{" "}
-          words and {text.length} characters
+          words and {text.replace(/\s/g, "").length} characters
         </p>
         <p>
           {0.008 *
