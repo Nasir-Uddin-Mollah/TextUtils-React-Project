@@ -15,7 +15,10 @@ export default function TextForm(props) {
       words[i] =
         words[i].charAt(0).toUpperCase() + words[i].substring(1).toLowerCase();
     }
-    let newText = words.join(" ");
+    let newText = text.replace(
+      /\S+/g,
+      (word) => word[0].toUpperCase() + word.slice(1).toLowerCase()
+    );
     setText(newText);
   };
   const handleClearClick = () => {
@@ -107,7 +110,7 @@ export default function TextForm(props) {
       <div className="my-3">
         <h3 className="text-2xl font-semibold">Your Text Summary</h3>
         <p>
-          {text.split(" ").filter((element) => element.length !== 0).length}{" "}
+          {text.split(/\s/).filter((element) => element.length !== 0).length}{" "}
           words and {text.replace(/\s/g, "").length} characters
         </p>
         <p>
